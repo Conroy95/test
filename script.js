@@ -1,61 +1,53 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // Functie om de Excel-bestanden in te lezen
-  function loadExcelData(file) {
-    const reader = new FileReader();
+let carData = [
+    { brandLogo: 'logo1.png', brand: 'Mercedes', model: 'AMG GT', year: 2021, scale: '1:18', category: 'Sport', comment: 'Special Edition' },
+    { brandLogo: 'logo2.png', brand: 'Ferrari', model: '488 GTB', year: 2020, scale: '1:24', category: 'Sport', comment: 'Limited' },
+    { brandLogo: 'logo3.png', brand: 'BMW', model: 'X5', year: 2019, scale: '1:18', category: 'SUV', comment: 'Black Edition' },
+    { brandLogo: 'logo4.png', brand: 'Porsche', model: '911 Turbo', year: 2018, scale: '1:43', category: 'Classic', comment: 'Mint Condition' }
+    // Voeg hier je andere miniatuurauto's toe
+];
 
-    reader.onload = function(event) {
-      const data = event.target.result;
-      const workbook = XLSX.read(data, { type: 'binary' });
+function loadTable() {
+    const tableBody = document.getElementById("carTableBody");
+    tableBody.innerHTML = "";
 
-      // Verkrijg de eerste sheet
-      const sheet = workbook.Sheets[workbook.SheetNames[0]];
+    carData.forEach(car => {
+        const row = document.createElement("tr");
 
-      // Zet de data om naar een JSON-object
-      const rows = XLSX.utils.sheet_to_json(sheet);
+        row.innerHTML = `
+            <td><img src="${car.brandLogo}" alt="${car.brand} logo"></td>
+            <td>${car.brand}</td>
+            <td>${car.model}</td>
+            <td>${car.year}</td>
+            <td>${car.scale}</td>
+            <td>${car.category}</td>
+            <td>${car.comment}</td>
+        `;
 
-      // Voeg de data toe aan de tabel
-      displayData(rows);
-    };
-
-    reader.readAsBinaryString(file);
-  }
-
-  // Functie om de data in de tabel te tonen
-  function displayData(rows) {
-    const tableBody = document.getElementById('car-data');
-
-    rows.forEach(row => {
-      const tr = document.createElement('tr');
-      tr.innerHTML = `
-        <td><img src="${row['Merk Logo']}" alt="${row['Merknaam']} logo"></td>
-        <td>${row['Merknaam']}</td>
-        <td>${row['Model']}</td>
-        <td>${row['Jaar']}</td>
-        <td>${row['Schaal']}</td>
-        <td>${row['Categorie']}</td>
-        <td>${row['Opmerking']}</td>
-      `;
-      tableBody.appendChild(tr);
+        tableBody.appendChild(row);
     });
-  }
+}
 
-  // Upload bestand selecteren
-  const input = document.createElement('input');
-  input.type = 'file';
-  input.accept = '.xlsx';
-  input.addEventListener('change', (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      loadExcelData(file);
-    }
-  });
+function search() {
+    const input = document.getElementById("searchInput").value.toLowerCase();
+    const filteredData = carData.filter(car => {
+        return car.brand.toLowerCase().includes(input) || 
+               car.model.toLowerCase().includes(input) || 
+               car.year.toString().includes(input) || 
+               car.category.toLowerCase().includes(input);
+    });
 
-  // Voeg de upload knop toe aan de pagina
-  const uploadBtn = document.createElement('button');
-  uploadBtn.textContent = 'Upload Excel Bestand';
-  uploadBtn.addEventListener('click', () => {
-    input.click();
-  });
+    carData = filteredData;
+    loadTable();
+}
 
-  document.body.insertBefore(uploadBtn, document.body.firstChild);
-});
+function filter() {
+    const category = document.getElementById("filterCategory").value;
+    const filteredData = carData.filter(car => {
+        return category === "" || car.category === category;
+    });
+
+    carData = filteredData;
+    loadTable();
+}
+
+document.addEventListener("DOMContentLoaded", loadTable);
