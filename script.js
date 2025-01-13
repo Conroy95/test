@@ -1,13 +1,31 @@
 // Voorbeeldgegevens van miniatuurauto's
 const autos = [
     {
-        logo: "https://via.placeholder.com/100x50?text=Merk1",
-        merknaam: "Merk1",
-        model: "Model A",
-        jaar: 2020,
+        logo: "igm/dodge.png",
+        merknaam: "Dodge",
+        model: "Monaco",
+        jaar: 1974,
         schaal: "1:18",
-        categorie: "Sportwagen",
-        opmerking: "Limited edition"
+        categorie: "Street",
+        opmerking: "Bluesmobile Look a Like"
+    },
+    {
+        logo: "img/dodge.png",
+        merknaam: "Dodge",
+        model: "Monaco",
+        jaar: 1974,
+        schaal: "1:18",
+        categorie: "Street",
+        opmerking: "Chicago Police Look a Like"
+    },
+    {
+        logo: "https://via.placeholder.com/100x50?text=Merk3",
+        merknaam: "Merk3",
+        model: "Model C",
+        jaar: 2022,
+        schaal: "1:43",
+        categorie: "SUV",
+        opmerking: "Nieuwste model"
     },
     {
         logo: "https://via.placeholder.com/100x50?text=Merk2",
@@ -18,15 +36,6 @@ const autos = [
         categorie: "Classic",
         opmerking: "Vintage model"
     },
-    {
-        logo: "https://via.placeholder.com/100x50?text=Merk3",
-        merknaam: "Merk3",
-        model: "Model C",
-        jaar: 2022,
-        schaal: "1:43",
-        categorie: "SUV",
-        opmerking: "Nieuwste model"
-    }
     // Voeg hier meer auto-objecten toe
 ];
 
