@@ -3,42 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Miniatuur Auto Verzameling</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
         <h1>Mijn Miniatuur Auto Verzameling</h1>
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Zoek een model..." onkeyup="search()">
-        </div>
+        <input type="text" id="searchInput" placeholder="Zoek naar merk, model of categorie...">
     </header>
 
-    <div class="filter-container">
-        <select id="filterCategory" onchange="filter()">
-            <option value="">Filter op Categorie</option>
-            <option value="Sport">Sport</option>
-            <option value="Classic">Classic</option>
-            <option value="SUV">SUV</option>
-        </select>
-    </div>
+    <main>
+        <section id="autoLijst" class="auto-lijst">
+            <!-- Auto's worden hier geladen via JavaScript -->
+        </section>
+    </main>
 
-    <table id="carTable">
-        <thead>
-            <tr>
-                <th>Merk Logo</th>
-                <th>Merknaam</th>
-                <th>Model</th>
-                <th>Jaar</th>
-                <th>Schaal</th>
-                <th>Categorie</th>
-                <th>Opmerking</th>
-            </tr>
-        </thead>
-        <tbody id="carTableBody">
-            <!-- Gegevens komen hier -->
-        </tbody>
-    </table>
+    <footer>
+        <p>&copy; 2025 Mijn Miniatuur Auto Verzameling</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
