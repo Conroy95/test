@@ -19,7 +19,7 @@ const autos = [
         opmerking: "Chicago Police Look a Like"
     },
     {
-        logo: "img/spark.png",
+        logo: "img/S5823.png",
         merknaam: "GIBSON NO.37 JACKIE CHAN DC RACING 3RD",
         model: "ORECA 07",
         jaar: 2017,
@@ -28,13 +28,31 @@ const autos = [
         opmerking: "S5823 - Spark - 1:43"
     },
     {
-        logo: "img/spark.png",
+        logo: "img/S7027.png",
         merknaam: "GIBSON NO.47 CETILAR VILLORBA CORSE",
         model: "DALLARA P217",
         jaar: 2018,
         schaal: "1:43",
         categorie: "24H LE MANS",
         opmerking: "S7027 - Spark - 1:43"
+    },
+    {
+        logo: "img/S7955.png",
+        merknaam: "GIBSON NO.1 REBELLION RACING 2ND",
+        model: "REBELLION R13",
+        jaar: 2018,
+        schaal: "1:43",
+        categorie: "24H LE MANS",
+        opmerking: "S7955 - Spark - 1:43"
+    },
+    {
+        logo: "img/S7015.png",
+        merknaam: "GIBSON NO.29 RACING TEAM NEDERLAN",
+        model: "DALLARA P217",
+        jaar: 2018,
+        schaal: "1:43",
+        categorie: "24H LE MANS",
+        opmerking: "S7015 - Spark - 1:43"
     },
     // Voeg hier meer auto-objecten toe
 ];
