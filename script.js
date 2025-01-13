@@ -1,53 +1,67 @@
-let carData = [
-    { brandLogo: 'logo1.png', brand: 'Mercedes', model: 'AMG GT', year: 2021, scale: '1:18', category: 'Sport', comment: 'Special Edition' },
-    { brandLogo: 'logo2.png', brand: 'Ferrari', model: '488 GTB', year: 2020, scale: '1:24', category: 'Sport', comment: 'Limited' },
-    { brandLogo: 'logo3.png', brand: 'BMW', model: 'X5', year: 2019, scale: '1:18', category: 'SUV', comment: 'Black Edition' },
-    { brandLogo: 'logo4.png', brand: 'Porsche', model: '911 Turbo', year: 2018, scale: '1:43', category: 'Classic', comment: 'Mint Condition' }
-    // Voeg hier je andere miniatuurauto's toe
+// Voorbeeldgegevens van miniatuurauto's
+const autos = [
+    {
+        logo: "https://via.placeholder.com/100x50?text=Merk1",
+        merknaam: "Merk1",
+        model: "Model A",
+        jaar: 2020,
+        schaal: "1:18",
+        categorie: "Sportwagen",
+        opmerking: "Limited edition"
+    },
+    {
+        logo: "https://via.placeholder.com/100x50?text=Merk2",
+        merknaam: "Merk2",
+        model: "Model B",
+        jaar: 2018,
+        schaal: "1:24",
+        categorie: "Classic",
+        opmerking: "Vintage model"
+    },
+    {
+        logo: "https://via.placeholder.com/100x50?text=Merk3",
+        merknaam: "Merk3",
+        model: "Model C",
+        jaar: 2022,
+        schaal: "1:43",
+        categorie: "SUV",
+        opmerking: "Nieuwste model"
+    }
+    // Voeg hier meer auto-objecten toe
 ];
 
-function loadTable() {
-    const tableBody = document.getElementById("carTableBody");
-    tableBody.innerHTML = "";
+// Functie om de auto's weer te geven op de pagina
+function toonAutos(autos) {
+    const autoLijst = document.getElementById("autoLijst");
+    autoLijst.innerHTML = ''; // Maak de lijst leeg voor nieuwe weergave
 
-    carData.forEach(car => {
-        const row = document.createElement("tr");
+    autos.forEach(auto => {
+        const autoCard = document.createElement("div");
+        autoCard.classList.add("auto-card");
 
-        row.innerHTML = `
-            <td><img src="${car.brandLogo}" alt="${car.brand} logo"></td>
-            <td>${car.brand}</td>
-            <td>${car.model}</td>
-            <td>${car.year}</td>
-            <td>${car.scale}</td>
-            <td>${car.category}</td>
-            <td>${car.comment}</td>
+        autoCard.innerHTML = `
+            <img src="${auto.logo}" alt="${auto.merknaam}">
+            <h3>${auto.merknaam} - ${auto.model}</h3>
+            <p><strong>Jaar:</strong> ${auto.jaar}</p>
+            <p><strong>Schaal:</strong> ${auto.schaal}</p>
+            <p><strong>Categorie:</strong> ${auto.categorie}</p>
+            <p><strong>Opmerking:</strong> ${auto.opmerking}</p>
         `;
 
-        tableBody.appendChild(row);
+        autoLijst.appendChild(autoCard);
     });
 }
 
-function search() {
-    const input = document.getElementById("searchInput").value.toLowerCase();
-    const filteredData = carData.filter(car => {
-        return car.brand.toLowerCase().includes(input) || 
-               car.model.toLowerCase().includes(input) || 
-               car.year.toString().includes(input) || 
-               car.category.toLowerCase().includes(input);
+// Zoek- en filterfunctie
+document.getElementById("searchInput").addEventListener("input", function() {
+    const zoekterm = this.value.toLowerCase();
+    const gefilterdeAutos = autos.filter(auto => {
+        return auto.merknaam.toLowerCase().includes(zoekterm) ||
+               auto.model.toLowerCase().includes(zoekterm) ||
+               auto.categorie.toLowerCase().includes(zoekterm);
     });
+    toonAutos(gefilterdeAutos);
+});
 
-    carData = filteredData;
-    loadTable();
-}
-
-function filter() {
-    const category = document.getElementById("filterCategory").value;
-    const filteredData = carData.filter(car => {
-        return category === "" || car.category === category;
-    });
-
-    carData = filteredData;
-    loadTable();
-}
-
-document.addEventListener("DOMContentLoaded", loadTable);
+// Toon alle auto's bij het laden van de pagina
+toonAutos(autos);
