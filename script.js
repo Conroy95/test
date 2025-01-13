@@ -1,7 +1,7 @@
 // Voorbeeldgegevens van miniatuurauto's
 const autos = [
     {
-        logo: "igm/dodge.png",
+        logo: "img/dodge.png",
         merknaam: "Dodge",
         model: "Monaco",
         jaar: 1974,
