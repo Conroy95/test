@@ -19,22 +19,22 @@ const autos = [
         opmerking: "Chicago Police Look a Like"
     },
     {
-        logo: "https://via.placeholder.com/100x50?text=Merk3",
-        merknaam: "Merk3",
-        model: "Model C",
-        jaar: 2022,
+        logo: "img/spark.png",
+        merknaam: "GIBSON NO.37 JACKIE CHAN DC RACING 3RD",
+        model: "ORECA 07",
+        jaar: 2017,
         schaal: "1:43",
-        categorie: "SUV",
-        opmerking: "Nieuwste model"
+        categorie: "24H LE MANS",
+        opmerking: "S5823 - Spark - 1:43"
     },
     {
-        logo: "https://via.placeholder.com/100x50?text=Merk2",
-        merknaam: "Merk2",
-        model: "Model B",
+        logo: "img/spark.png",
+        merknaam: "GIBSON NO.47 CETILAR VILLORBA CORSE",
+        model: "DALLARA P217",
         jaar: 2018,
-        schaal: "1:24",
-        categorie: "Classic",
-        opmerking: "Vintage model"
+        schaal: "1:43",
+        categorie: "24H LE MANS",
+        opmerking: "S7027 - Spark - 1:43"
     },
     // Voeg hier meer auto-objecten toe
 ];
