@@ -1,24 +1,6 @@
 // Voorbeeldgegevens van miniatuurauto's
 const autos = [
     {
-        logo: "img/dodge.png",
-        merknaam: "Dodge",
-        model: "Monaco",
-        jaar: 1974,
-        schaal: "1:18",
-        categorie: "Street",
-        opmerking: "Bluesmobile Look a Like"
-    },
-    {
-        logo: "img/dodge.png",
-        merknaam: "Dodge",
-        model: "Monaco",
-        jaar: 1974,
-        schaal: "1:18",
-        categorie: "Street",
-        opmerking: "Chicago Police Look a Like"
-    },
-    {
         logo: "img/S5823.png",
         merknaam: "GIBSON NO.37 JACKIE CHAN DC RACING 3RD",
         model: "ORECA 07",
@@ -40,7 +22,7 @@ const autos = [
         logo: "img/S7955.png",
         merknaam: "GIBSON NO.1 REBELLION RACING 2ND",
         model: "REBELLION R13",
-        jaar: 2018,
+        jaar: 2020,
         schaal: "1:43",
         categorie: "24H LE MANS",
         opmerking: "S7955 - Spark - 1:43"
@@ -58,10 +40,19 @@ const autos = [
         logo: "img/S7664.png",
         merknaam: "NO.14 ALPINE F1 TEAM BAHRAIN GP 2021 FERNANDO",
         model: "ALPINE A521",
-        jaar: 2018,
+        jaar: 2021,
         schaal: "1:43",
         categorie: "Formula One",
         opmerking: "S7664 - Spark - 1:43"
+    },
+    {
+        logo: "img/0954.png",
+        merknaam: "Dakar Buggy",
+        model: "Tim/Tom Coronel Dakar Team",
+        jaar: 2017,
+        schaal: "1:43",
+        categorie: "Dakar",
+        opmerking: "0954 - Spark - 1:43"
     },
     // Voeg hier meer auto-objecten toe
 ];
