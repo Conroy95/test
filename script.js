@@ -54,6 +54,15 @@ const autos = [
         categorie: "24H LE MANS",
         opmerking: "S7015 - Spark - 1:43"
     },
+    {
+        logo: "img/S7664.png",
+        merknaam: "NO.14 ALPINE F1 TEAM BAHRAIN GP 2021 FERNANDO",
+        model: "ALPINE A521",
+        jaar: 2018,
+        schaal: "1:43",
+        categorie: "Formula One",
+        opmerking: "S7664 - Spark - 1:43"
+    },
     // Voeg hier meer auto-objecten toe
 ];
 
