@@ -1,58 +1,72 @@
-/* Algemene stijl */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
 header {
-  background-color: #333;
-  color: white;
-  padding: 10px;
-  text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
 
-h1 {
-  margin: 0;
+.search-container {
+    margin: 10px 0;
 }
 
-/* Tabelstijl */
+#searchInput {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.filter-container {
+    margin: 20px;
+    text-align: center;
+}
+
+#filterCategory {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
 table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
 }
 
 th, td {
-  padding: 10px;
-  text-align: center;
-  border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
 }
 
 th {
-  background-color: #333;
-  color: white;
+    background-color: #333;
+    color: white;
 }
 
 td img {
-  width: 50px;
-  height: auto;
+    max-width: 50px;
+    height: auto;
 }
 
-/* Mobiel-vriendelijk ontwerp */
 @media screen and (max-width: 768px) {
-  table, th, td {
-    display: block;
-    width: 100%;
-  }
+    table {
+        font-size: 12px;
+    }
 
-  th, td {
-    text-align: left;
-  }
-
-  td {
-    border-bottom: 1px solid #ddd;
-  }
+    #searchInput {
+        width: 90%;
+    }
 }
