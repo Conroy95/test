@@ -1,12 +1,12 @@
 [
     {
         "day": 1,
-        "from": "Los Angeles, CA",
-        "to": "Las Vegas, NV",
+        "from": "New York, JFK Airport",
+        "to": "Los Angeles, CA",
         "hotel": {
-            "name": "Bellagio Hotel",
-            "coordinates": "36.1126° N, 115.1767° W",
-            "image": "images/bellagio.jpg"
+            "name": "Hampton Inn By Hilton Los Angeles Airport",
+            "coordinates": "33.942722, -118.369611",
+            "image": "https://conroy95.github.io/RoadTrip95/images/hotel1.jpg"
         },
         "stops": [
             {
