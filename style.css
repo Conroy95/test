@@ -20,7 +20,8 @@ h1 {
 }
 
 h1 a{
-    text-decoration: none;    
+    text-decoration: none;
+    color: white;
 }
 
 #searchInput {
