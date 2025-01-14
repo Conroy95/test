@@ -54,6 +54,15 @@ const autos = [
         categorie: "Dakar",
         opmerking: "0954 - Spark - 1:43"
     },
+    {
+        logo: "img/helm.png",
+        merknaam: "Helm Miami GP",
+        model: "Max Verstappen",
+        jaar: 2022,
+        schaal: "1:2",
+        categorie: "Formula One",
+        opmerking: "35 - Schuberth"
+    },
     // Voeg hier meer auto-objecten toe
 ];
 
