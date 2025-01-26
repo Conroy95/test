@@ -1,7 +1,7 @@
 document.getElementById("itemForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    // Haal de inputgegevens op
+    // Haal de gegevens op van het formulier
     const category = document.getElementById("category").value;
     const name = document.getElementById("name").value;
     const year = document.getElementById("year").value;
