@@ -1,3 +1,4 @@
+/* Algemene opmaak */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +7,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    background-color: #f4f4f4;
     padding: 20px;
 }
 
@@ -24,6 +25,7 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* Formulier en knoppen */
 form {
     display: flex;
     flex-direction: column;
@@ -51,6 +53,7 @@ button:hover {
     background-color: #45a049;
 }
 
+/* Lijst van items */
 ul {
     list-style-type: none;
     margin-top: 20px;
