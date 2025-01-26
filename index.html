@@ -3,30 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diecast Collection</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Mijn Diecast Collectie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .category {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 45%;
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .category:hover {
+            transform: scale(1.05);
+        }
+        .category h2 {
+            font-size: 24px;
+        }
+        .category p {
+            font-size: 16px;
+            color: #555;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Diecast Collection</h1>
-        <form id="itemForm">
-            <label for="category">Categorie:</label>
-            <select id="category">
-                <option value="auto">Auto</option>
-                <option value="truck">Truck</option>
-                <option value="helmet">Helm</option>
-            </select>
 
-            <label for="name">Naam:</label>
-            <input type="text" id="name" placeholder="Naam van item" required>
+<header>
+    <h1>Mijn Diecast Collectie</h1>
+</header>
 
-            <label for="year">Jaar:</label>
-            <input type="number" id="year" placeholder="Jaar van productie" required>
-
-            <button type="submit">Voeg item toe</button>
-        </form>
-        <ul id="collectionList"></ul>
+<div class="container">
+    <div class="category">
+        <h2>Auto's</h2>
+        <p>Bekijk mijn collectie van diecast auto's.</p>
     </div>
-    <script src="app.js"></script>
+    <div class="category">
+        <h2>Trucks</h2>
+        <p>Bekijk mijn collectie van diecast trucks.</p>
+    </div>
+    <div class="category">
+        <h2>Helmen</h2>
+        <p>Bekijk mijn collectie van diecast helmen.</p>
+    </div>
+</div>
+
+<footer>
+    <p>© 2025 Mijn Diecast Collectie</p>
+</footer>
+
 </body>
 </html>
