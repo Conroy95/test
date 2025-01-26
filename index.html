@@ -3,27 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Miniatuur Auto Verzameling</title>
+    <title>Diecast Collection</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <header>
-        <h1><a href="index.html">Mijn Miniatuur Auto Verzameling</a></h1>
-        <input type="text" id="searchInput" placeholder="Zoek naar merk, model of categorie...">
-    </header>
-
-    <main>
-        <section id="autoLijst" class="auto-lijst">
-            <!-- Auto's worden hier geladen via JavaScript -->
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Mijn Miniatuur Auto Verzameling</p>
-    </footer>
-
-    <script src="script.js"></script>
+    <div class="container">
+        <h1>Diecast Collection</h1>
+        <form id="itemForm">
+            <label for="category">Categorie:</label>
+            <select id="category">
+                <option value="auto">Auto</option>
+                <option value="truck">Truck</option>
+                <option value="helmet">Helm</option>
+            </select>
+            <label for="name">Naam:</label>
+            <input type="text" id="name" placeholder="Naam van item" required>
+            <label for="year">Jaar:</label>
+            <input type="number" id="year" placeholder="Jaar van productie" required>
+            <button type="submit">Voeg item toe</button>
+        </form>
+        <ul id="collectionList">
+            <!-- Items worden hier toegevoegd -->
+        </ul>
+    </div>
+    <script src="app.js"></script>
 </body>
 </html>
