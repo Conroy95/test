@@ -13,6 +13,6 @@
         "schaal": "1:24",
         "omschrijving": "Een witte Lamborghini Countach.",
         "code": "L-CNTCH",
-        "afbeelding": "images/countach.jpg"
+        "afbeelding": "img/S7027.png"
     }
 ]
