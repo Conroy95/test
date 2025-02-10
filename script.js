@@ -1,44 +1,38 @@
-// Dit is een voorbeeld van enkele items in je collectie
-const diecastItems = [
-  {
-    name: 'Ferrari F40',
-    image: 'https://via.placeholder.com/200',
-    category: 'Sportwagen',
-    description: 'Een iconische sportwagen uit de jaren 90, beroemd om zijn prestaties.',
-  },
-  {
-    name: 'Porsche 911',
-    image: 'https://via.placeholder.com/200',
-    category: 'Sportwagen',
-    description: 'Een van de meest legendarische sportwagens ooit geproduceerd.',
-  },
-  {
-    name: 'Volkswagen Beetle',
-    image: 'https://via.placeholder.com/200',
-    category: 'Classic',
-    description: 'Een klassieker die wereldwijd bekend is geworden door zijn unieke ontwerp.',
-  },
-];
+document.addEventListener("DOMContentLoaded", () => {
+    const autoForm = document.getElementById("autoForm");
+    const autoLijst = document.getElementById("autoLijst");
 
-// Functie om de collectie weer te geven
-function renderCollection() {
-  const collectionContainer = document.querySelector('.collection');
-  collectionContainer.innerHTML = ''; // Maak de container leeg
+    let autos = JSON.parse(localStorage.getItem("autos")) || [];
 
-  diecastItems.forEach(item => {
-    const itemDiv = document.createElement('div');
-    itemDiv.classList.add('item');
+    function updateAutoLijst() {
+        autoLijst.innerHTML = "";
+        autos.forEach((auto, index) => {
+            let li = document.createElement("li");
+            li.innerHTML = `${auto.merk} ${auto.model} (${auto.bouwjaar}) - ${auto.kenteken}  
+                            <button onclick="verwijderAuto(${index})">❌</button>`;
+            autoLijst.appendChild(li);
+        });
+    }
 
-    itemDiv.innerHTML = `
-      <img src="${item.image}" alt="${item.name}">
-      <h2>${item.name}</h2>
-      <p><strong>Categorie:</strong> ${item.category}</p>
-      <p><strong>Omschrijving:</strong> ${item.description}</p>
-    `;
+    autoForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const merk = document.getElementById("merk").value;
+        const model = document.getElementById("model").value;
+        const bouwjaar = document.getElementById("bouwjaar").value;
+        const kenteken = document.getElementById("kenteken").value;
 
-    collectionContainer.appendChild(itemDiv);
-  });
-}
+        autos.push({ merk, model, bouwjaar, kenteken });
+        localStorage.setItem("autos", JSON.stringify(autos));
 
-// Roep de renderCollection functie aan om de items weer te geven
-renderCollection();
+        updateAutoLijst();
+        autoForm.reset();
+    });
+
+    window.verwijderAuto = (index) => {
+        autos.splice(index, 1);
+        localStorage.setItem("autos", JSON.stringify(autos));
+        updateAutoLijst();
+    };
+
+    updateAutoLijst();
+});
