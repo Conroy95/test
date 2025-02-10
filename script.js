@@ -1,54 +1,63 @@
-document.getElementById("diecastForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-    
-    let name = document.getElementById("name").value;
-    let type = document.getElementById("type").value;
-    let description = document.getElementById("description").value;
-    let photoInput = document.getElementById("photo");
-    
-    if (!name || !type) {
-        alert("Naam en type zijn verplicht!");
-        return;
-    }
-    
-    let reader = new FileReader();
-    reader.onload = function() {
-        let diecast = { name, type, description, photo: reader.result };
-        let collection = JSON.parse(localStorage.getItem("diecastCollection")) || [];
-        collection.push(diecast);
-        localStorage.setItem("diecastCollection", JSON.stringify(collection));
-        displayCollection();
-    };
-    
-    if (photoInput.files[0]) {
-        reader.readAsDataURL(photoInput.files[0]);
-    } else {
-        reader.onload();
-    }
+document.addEventListener("DOMContentLoaded", loadCollection);
 
-    this.reset();
+document.getElementById("carForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    let merk = document.getElementById("merk").value;
+    let type = document.getElementById("type").value;
+    let code = document.getElementById("code").value;
+    let omschrijving = document.getElementById("omschrijving").value;
+    let imageFile = document.getElementById("imageUpload").files[0];
+
+    if (imageFile) {
+        let reader = new FileReader();
+        reader.onload = function(e) {
+            let newCar = { merk, type, code, omschrijving, image: e.target.result };
+            saveCar(newCar);
+        };
+        reader.readAsDataURL(imageFile);
+    }
 });
 
-function displayCollection() {
-    let collectionDiv = document.getElementById("collection");
-    collectionDiv.innerHTML = "";
-    let collection = JSON.parse(localStorage.getItem("diecastCollection")) || [];
-    
-    collection.forEach((item, index) => {
-        let div = document.createElement("div");
-        div.innerHTML = `<h3>${item.name} (${item.type})</h3>
-                         <p>${item.description}</p>
-                         ${item.photo ? `<img src="${item.photo}" alt="${item.name}">` : ""}
-                         <button onclick="deleteItem(${index})">Verwijderen</button>`;
-        collectionDiv.appendChild(div);
+function saveCar(car) {
+    let collection = JSON.parse(localStorage.getItem("miniatuurCollectie")) || [];
+    collection.push(car);
+    localStorage.setItem("miniatuurCollectie", JSON.stringify(collection));
+    loadCollection();
+}
+
+function loadCollection() {
+    let collectionGrid = document.getElementById("collectionGrid");
+    collectionGrid.innerHTML = "";
+    let collection = JSON.parse(localStorage.getItem("miniatuurCollectie")) || [];
+
+    collection.forEach((car, index) => {
+        let carDiv = document.createElement("div");
+        carDiv.classList.add("car-item");
+        carDiv.innerHTML = `
+            <img src="${car.image}" alt="${car.merk} ${car.type}">
+            <h3>${car.merk} ${car.type}</h3>
+            <p><strong>Code:</strong> ${car.code}</p>
+            <p>${car.omschrijving}</p>
+            <button onclick="deleteCar(${index})">Verwijderen</button>
+        `;
+        collectionGrid.appendChild(carDiv);
     });
 }
 
-function deleteItem(index) {
-    let collection = JSON.parse(localStorage.getItem("diecastCollection")) || [];
+function deleteCar(index) {
+    let collection = JSON.parse(localStorage.getItem("miniatuurCollectie")) || [];
     collection.splice(index, 1);
-    localStorage.setItem("diecastCollection", JSON.stringify(collection));
-    displayCollection();
+    localStorage.setItem("miniatuurCollectie", JSON.stringify(collection));
+    loadCollection();
 }
 
-window.onload = displayCollection;
+function filterCollection() {
+    let searchValue = document.getElementById("search").value.toLowerCase();
+    let carItems = document.querySelectorAll(".car-item");
+
+    carItems.forEach(item => {
+        let title = item.querySelector("h3").textContent.toLowerCase();
+        item.style.display = title.includes(searchValue) ? "block" : "none";
+    });
+}
