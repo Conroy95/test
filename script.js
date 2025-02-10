@@ -5,7 +5,7 @@
         "schaal": "1:18",
         "omschrijving": "Een klassieke rode Ferrari F40.",
         "code": "F40-RED",
-        "afbeelding": "images/f40.jpg"
+        "afbeelding": "img/S7027.png"
     },
     {
         "merk": "Lamborghini",
