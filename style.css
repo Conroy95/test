@@ -1,31 +1,46 @@
-body { 
-    font-family: Arial, sans-serif; 
-    margin: 20px; 
-    padding: 20px; 
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+    background-color: #f4f4f4;
 }
 
-form { 
-    margin-bottom: 20px; 
+h1 {
+    color: #333;
 }
 
-input, textarea { 
-    display: block; 
-    margin: 10px 0; 
-    width: 100%; 
-    padding: 8px; 
+input, textarea, button {
+    width: 90%;
+    max-width: 400px;
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
 }
 
-button { 
-    padding: 10px; 
-    background: blue; 
-    color: white; 
-    border: none; 
-    cursor: pointer; 
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
-#collection img { 
-    width: 150px; 
-    height: auto; 
-    display: block; 
-    margin-top: 10px; 
+#collectionGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.car-item {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.car-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
 }
