@@ -1,38 +1,54 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const autoForm = document.getElementById("autoForm");
-    const autoLijst = document.getElementById("autoLijst");
-
-    let autos = JSON.parse(localStorage.getItem("autos")) || [];
-
-    function updateAutoLijst() {
-        autoLijst.innerHTML = "";
-        autos.forEach((auto, index) => {
-            let li = document.createElement("li");
-            li.innerHTML = `${auto.merk} ${auto.model} (${auto.bouwjaar}) - ${auto.kenteken}  
-                            <button onclick="verwijderAuto(${index})">❌</button>`;
-            autoLijst.appendChild(li);
-        });
+document.getElementById("diecastForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    let name = document.getElementById("name").value;
+    let type = document.getElementById("type").value;
+    let description = document.getElementById("description").value;
+    let photoInput = document.getElementById("photo");
+    
+    if (!name || !type) {
+        alert("Naam en type zijn verplicht!");
+        return;
+    }
+    
+    let reader = new FileReader();
+    reader.onload = function() {
+        let diecast = { name, type, description, photo: reader.result };
+        let collection = JSON.parse(localStorage.getItem("diecastCollection")) || [];
+        collection.push(diecast);
+        localStorage.setItem("diecastCollection", JSON.stringify(collection));
+        displayCollection();
+    };
+    
+    if (photoInput.files[0]) {
+        reader.readAsDataURL(photoInput.files[0]);
+    } else {
+        reader.onload();
     }
 
-    autoForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const merk = document.getElementById("merk").value;
-        const model = document.getElementById("model").value;
-        const bouwjaar = document.getElementById("bouwjaar").value;
-        const kenteken = document.getElementById("kenteken").value;
-
-        autos.push({ merk, model, bouwjaar, kenteken });
-        localStorage.setItem("autos", JSON.stringify(autos));
-
-        updateAutoLijst();
-        autoForm.reset();
-    });
-
-    window.verwijderAuto = (index) => {
-        autos.splice(index, 1);
-        localStorage.setItem("autos", JSON.stringify(autos));
-        updateAutoLijst();
-    };
-
-    updateAutoLijst();
+    this.reset();
 });
+
+function displayCollection() {
+    let collectionDiv = document.getElementById("collection");
+    collectionDiv.innerHTML = "";
+    let collection = JSON.parse(localStorage.getItem("diecastCollection")) || [];
+    
+    collection.forEach((item, index) => {
+        let div = document.createElement("div");
+        div.innerHTML = `<h3>${item.name} (${item.type})</h3>
+                         <p>${item.description}</p>
+                         ${item.photo ? `<img src="${item.photo}" alt="${item.name}">` : ""}
+                         <button onclick="deleteItem(${index})">Verwijderen</button>`;
+        collectionDiv.appendChild(div);
+    });
+}
+
+function deleteItem(index) {
+    let collection = JSON.parse(localStorage.getItem("diecastCollection")) || [];
+    collection.splice(index, 1);
+    localStorage.setItem("diecastCollection", JSON.stringify(collection));
+    displayCollection();
+}
+
+window.onload = displayCollection;
