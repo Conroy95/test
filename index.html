@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diecast Collectie</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mijn Auto Verzameling</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Mijn Diecast Collectie</h1>
-  </header>
+    <h1>Mijn Auto Verzameling</h1>
+    
+    <form id="autoForm">
+        <input type="text" id="merk" placeholder="Merk" required>
+        <input type="text" id="model" placeholder="Model" required>
+        <input type="text" id="bouwjaar" placeholder="Bouwjaar" required>
+        <input type="text" id="kenteken" placeholder="Kenteken" required>
+        <button type="submit">Voeg Auto Toe</button>
+    </form>
 
-  <main>
-    <div class="collection">
-      <!-- Dynamisch gegenereerde items worden hier weergegeven -->
-    </div>
-  </main>
+    <h2>Mijn Auto's</h2>
+    <ul id="autoLijst"></ul>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
