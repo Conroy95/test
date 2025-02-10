@@ -1,33 +1,31 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background: #f4f4f4;
-    margin: 20px;
+body { 
+    font-family: Arial, sans-serif; 
+    margin: 20px; 
+    padding: 20px; 
 }
-form {
-    margin-bottom: 20px;
+
+form { 
+    margin-bottom: 20px; 
 }
-input {
-    padding: 8px;
-    margin: 5px;
+
+input, textarea { 
+    display: block; 
+    margin: 10px 0; 
+    width: 100%; 
+    padding: 8px; 
 }
-button {
-    padding: 10px;
-    background: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
+
+button { 
+    padding: 10px; 
+    background: blue; 
+    color: white; 
+    border: none; 
+    cursor: pointer; 
 }
-button:hover {
-    background: #0056b3;
-}
-ul {
-    list-style: none;
-    padding: 0;
-}
-li {
-    background: white;
-    padding: 10px;
-    margin: 5px;
-    border-radius: 5px;
+
+#collection img { 
+    width: 150px; 
+    height: auto; 
+    display: block; 
+    margin-top: 10px; 
 }
