@@ -3,23 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mijn Auto Verzameling</title>
+    <title>Diecast Collectie</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Mijn Auto Verzameling</h1>
-    
-    <form id="autoForm">
-        <input type="text" id="merk" placeholder="Merk" required>
-        <input type="text" id="model" placeholder="Model" required>
-        <input type="text" id="bouwjaar" placeholder="Bouwjaar" required>
-        <input type="text" id="kenteken" placeholder="Kenteken" required>
-        <button type="submit">Voeg Auto Toe</button>
+    <h1>Mijn Diecast Collectie</h1>
+    <form id="diecastForm">
+        <input type="text" id="name" placeholder="Naam" required>
+        <input type="text" id="type" placeholder="Type" required>
+        <textarea id="description" placeholder="Omschrijving"></textarea>
+        <input type="file" id="photo" accept="image/*">
+        <button type="submit">Toevoegen</button>
     </form>
-
-    <h2>Mijn Auto's</h2>
-    <ul id="autoLijst"></ul>
-
+    <div id="collection"></div>
     <script src="script.js"></script>
 </body>
 </html>
