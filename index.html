@@ -3,19 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diecast Collectie</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Miniatuur Auto Collectie</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Mijn Diecast Collectie</h1>
-    <form id="diecastForm">
-        <input type="text" id="name" placeholder="Naam" required>
+
+    <h1>Miniatuur Auto Collectie</h1>
+
+    <input type="text" id="search" placeholder="Zoek op merk of type..." onkeyup="filterCollection()">
+
+    <form id="carForm">
+        <input type="text" id="merk" placeholder="Merk" required>
         <input type="text" id="type" placeholder="Type" required>
-        <textarea id="description" placeholder="Omschrijving"></textarea>
-        <input type="file" id="photo" accept="image/*">
-        <button type="submit">Toevoegen</button>
+        <input type="text" id="code" placeholder="Code" required>
+        <input type="file" id="imageUpload" accept="image/*" required>
+        <textarea id="omschrijving" placeholder="Omschrijving" required></textarea>
+        <button type="submit">Voeg toe</button>
     </form>
-    <div id="collection"></div>
+
+    <div id="collectionGrid"></div>
+
     <script src="script.js"></script>
 </body>
 </html>
