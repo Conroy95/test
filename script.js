@@ -1,23 +1,53 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
+    const autoContainer = document.getElementById("auto-container");
+    const searchInput = document.getElementById("search");
+    const filterSelect = document.getElementById("filter");
+
+    let autos = [];
+
+    // Data ophalen uit JSON
     fetch("data.json")
         .then(response => response.json())
         .then(data => {
-            const gridContainer = document.getElementById("grid-container");
+            autos = data;
+            localStorage.setItem("autos", JSON.stringify(autos));
+            toonAutos(autos);
+        });
 
-            data.forEach(auto => {
-                const card = document.createElement("div");
-                card.classList.add("card");
+    // Functie om auto's te tonen
+    function toonAutos(data) {
+        autoContainer.innerHTML = "";
+        data.forEach(auto => {
+            const card = document.createElement("div");
+            card.classList.add("card");
+            card.innerHTML = `
+                <img src="${auto.Afbeelding}" alt="${auto.Merk} ${auto.Type}">
+                <h2>${auto.Merk} ${auto.Type}</h2>
+                <p>${auto.Omschrijving}</p>
+                <p><strong>Prijs:</strong> ${auto.Prijs}</p>
+            `;
+            autoContainer.appendChild(card);
+        });
+    }
 
-                card.innerHTML = `
-                    <img src="${auto.afbeelding}" alt="${auto.merk} ${auto.type}">
-                    <h2>${auto.merk} ${auto.type}</h2>
-                    <p><strong>Schaal:</strong> ${auto.schaal}</p>
-                    <p>${auto.omschrijving}</p>
-                    <p><strong>Code:</strong> ${auto.code}</p>
-                `;
+    // Zoekfunctie
+    searchInput.addEventListener("input", function() {
+        const zoekwaarde = searchInput.value.toLowerCase();
+        const gefilterdeAutos = autos.filter(auto =>
+            auto.Merk.toLowerCase().includes(zoekwaarde) ||
+            auto.Type.toLowerCase().includes(zoekwaarde)
+        );
+        toonAutos(gefilterdeAutos);
+    });
 
-                gridContainer.appendChild(card);
-            });
-        })
-        .catch(error => console.error("Fout bij laden van data:", error));
+    // Filterfunctie
+    filterSelect.addEventListener("change", function() {
+        const geselecteerdeCategorie = filterSelect.value;
+        if (geselecteerdeCategorie === "all") {
+            toonAutos(autos);
+        } else {
+            const gefilterdeAutos = autos.filter(auto => auto.Categorie === geselecteerdeCategorie);
+            toonAutos(gefilterdeAutos);
+        }
+    });
 });
