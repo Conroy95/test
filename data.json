@@ -2,6 +2,7 @@
     {
         "Merk": "Oreca 07",
         "Type": "Gibson",
+        "Schaal": "1:43",        
         "Categorie": "24H Le Mans",
         "Prijs": " € 73,99",
         "Omschrijving": "Jackie Chan DC Racing - Oreca 07 - Gibson, Boxed - S5823  2017 | No.37 | Spark Models",
@@ -10,6 +11,7 @@
     {
         "Merk": "Audi",
         "Type": "A4",
+        "Schaal": "1:43",                
         "Categorie": "Sedan",
         "Prijs": "€50.000",
         "Omschrijving": "Comfortabele sedan met sportieve uitstraling.",
@@ -18,6 +20,7 @@
     {
         "Merk": "Volkswagen",
         "Type": "Golf",
+        "Schaal": "1:43",                
         "Categorie": "Hatchback",
         "Prijs": "€30.000",
         "Omschrijving": "Populaire hatchback met zuinige motor.",
