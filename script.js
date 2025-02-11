@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
             card.innerHTML = `
                 <img src="${auto.Afbeelding}" alt="${auto.Merk} ${auto.Type}">
                 <h2>${auto.Merk} ${auto.Type}</h2>
+                <p><strong>Schaal:</strong> ${auto.Schaal}</p>
                 <p>${auto.Omschrijving}</p>
                 <p><strong>Prijs:</strong> ${auto.Prijs}</p>
             `;
