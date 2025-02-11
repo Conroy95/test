@@ -3,12 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miniatuur Auto Collectie</title>
+    <title>Auto WebApp</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Miniatuur Auto Collectie</h1>
-    <div id="grid-container"></div>
+    <header>
+        <h1>Auto Overzicht</h1>
+        <input type="text" id="search" placeholder="Zoek een auto...">
+        <select id="filter">
+            <option value="all">Alle Categorieën</option>
+            <option value="SUV">SUV</option>
+            <option value="Sedan">Sedan</option>
+            <option value="Hatchback">Hatchback</option>
+        </select>
+    </header>
+
+    <main id="auto-container" class="grid-container"></main>
 
     <script src="script.js"></script>
 </body>
