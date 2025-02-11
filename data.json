@@ -1,18 +1,26 @@
 [
     {
-        "merk": "Ferrari",
-        "type": "F40",
-        "schaal": "1:18",
-        "omschrijving": "Een klassieke rode Ferrari F40.",
-        "code": "F40-RED",
-        "afbeelding": "img/S7027.png"
+        "Merk": "BMW",
+        "Type": "X5",
+        "Categorie": "SUV",
+        "Prijs": "€75.000",
+        "Omschrijving": "Luxe SUV met krachtige prestaties.",
+        "Afbeelding": "img/S7027.png"
     },
     {
-        "merk": "Lamborghini",
-        "type": "Countach",
-        "schaal": "1:24",
-        "omschrijving": "Een witte Lamborghini Countach.",
-        "code": "L-CNTCH",
-        "afbeelding": "img/S7027.png"
+        "Merk": "Audi",
+        "Type": "A4",
+        "Categorie": "Sedan",
+        "Prijs": "€50.000",
+        "Omschrijving": "Comfortabele sedan met sportieve uitstraling.",
+        "Afbeelding": "img/S7027.png"
+    },
+    {
+        "Merk": "Volkswagen",
+        "Type": "Golf",
+        "Categorie": "Hatchback",
+        "Prijs": "€30.000",
+        "Omschrijving": "Populaire hatchback met zuinige motor.",
+        "Afbeelding": "img/S7027.png"
     }
 ]
