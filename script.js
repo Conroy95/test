@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <p><strong>Schaal:</strong> ${auto.Schaal}</p>
                 <p>${auto.Omschrijving}</p>
                 <p><strong>Categorie:</strong> <p class="label ${auto.Categorie}">${auto.Categorie}</p></p>
-                <a class="ui red fa fa-tag label">Red</a>
+                <a class="label">Red</a>
                 <p><strong>Prijs:</strong> ${auto.Prijs}</p>
             `;
             autoContainer.appendChild(card);
