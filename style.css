@@ -47,9 +47,16 @@ input, select {
 }
 
 .label {
-    background-color: red;
     border-radius: 5px;
     color: white;
     padding: 8px;
     font-family: Arial;
+}
+
+.f1 {
+    background-color: red;
+}
+
+.24H Le Mans {
+    background-color: blue;
 }
