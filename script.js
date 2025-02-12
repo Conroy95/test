@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
             card.classList.add("card");
             card.innerHTML = `
                 <img src="${auto.Afbeelding}" alt="${auto.Merk} ${auto.Type}">
-                <p><strong>Categorie:</strong> <p class="label ${auto.Categorie}">${auto.Categorie}</p></p>
+                <p class="label ${auto.Categorie}"><strong>Categorie:</strong> ${auto.Categorie}</p>
                 <h2>${auto.Merk} ${auto.Type}</h2>
                 <p><strong>Schaal:</strong> ${auto.Schaal}</p>
                 <p>${auto.Omschrijving}</p>
