@@ -58,7 +58,7 @@ input, select {
     background-color: red;
 }
 
-.Le Mans 24H {
+.24H {
     background-color: blue;
 }
 
@@ -66,7 +66,22 @@ input, select {
     background-color: #B8860B;
 }
 
-a :link :hover :visited :active {
+a:link {
+    color: fff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: fff;
+    text-decoration: none;
+}
+
+a:visited {
+    color: fff;
+    text-decoration: none;
+}
+
+a:active {
     color: fff;
     text-decoration: none;
 }
