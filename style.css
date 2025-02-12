@@ -47,6 +47,7 @@ input, select {
 }
 
 .label {
+    background-color: gray;
     border-radius: 5px;
     color: white;
     padding: 8px;
