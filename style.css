@@ -66,7 +66,7 @@ input, select {
     background-color: #B8860B;
 }
 
-a {
+a :link :hover :visited :active {
     color: fff;
     text-decoration: none;
 }
