@@ -34,5 +34,16 @@
         "Prijs": "€69.95",
         "Omschrijving": "Rebellion Racing | 24H Le Mans - 2020 | Spark Models",
         "Afbeelding": "img/S7955.png"
-    }    
+    },
+    {
+        "Merk": "Maxxis",
+        "Type": "Buggy",
+        "Schaal": "1:43",                
+        "Categorie": "Dakar",
+        "Prijs": "€39,95",
+        "Omschrijving": "Maxxis Dakar Team Buggy | Tim en Tom Coronel | Dakar - 2017",
+        "Afbeelding": "img/0954.png"
+    }, 
 ]
+
+
