@@ -25,9 +25,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 <h2>${auto.Merk} ${auto.Type}</h2>
                 <p><strong>Schaal:</strong> ${auto.Schaal}</p>
                 <p>${auto.Omschrijving}</p>
-                <p class="label"><strong>Categorie:</strong> ${auto.Categorie}</p>
+                <p class="label fa fa-cog"><strong>Categorie:</strong> ${auto.Categorie}</p>
                 <div class="ui green tag small label"> 
-                    <i class="desktop icon"></i> Desktop 
+                    <i class="fa fa-cog"></i> Desktop 
                 </div> 
                 <p><strong>Prijs:</strong> ${auto.Prijs}</p>
             `;
