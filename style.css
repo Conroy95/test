@@ -53,10 +53,10 @@ input, select {
     font-family: Arial;
 }
 
-.f1 {
+.label F1 {
     background-color: red;
 }
 
-.24H Le Mans {
+.label 24H Le Mans {
     background-color: blue;
 }
