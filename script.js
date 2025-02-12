@@ -25,10 +25,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 <h2>${auto.Merk} ${auto.Type}</h2>
                 <p><strong>Schaal:</strong> ${auto.Schaal}</p>
                 <p>${auto.Omschrijving}</p>
-                <p class="label fa fa-cog"><strong>Categorie:</strong> ${auto.Categorie}</p>
-                <div class="ui green tag small label"> 
-                    <i class="fa fa-cog"></i> Desktop 
-                </div> 
+                <p class="label fa fa-tag"><strong>Categorie:</strong> ${auto.Categorie}</p>
+                <a class="ui red label">Red</a>
                 <p><strong>Prijs:</strong> ${auto.Prijs}</p>
             `;
             autoContainer.appendChild(card);
