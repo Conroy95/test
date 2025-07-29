@@ -1,1 +1,33 @@
-fetch('./routes.json').then(r=>r.json()).then(data=>{const p=new URLSearchParams(window.location.search);const d=parseInt(p.get('dag'))||1;const dag=data.find(x=>x.dag===d);if(!dag)return;document.getElementById('dagTitel').textContent=`Dag ${dag.dag} - ${dag.locatie}`;document.getElementById('dagDatum').textContent=dag.datum;document.getElementById('dagAfbeelding').src=`img/${dag.afbeelding}`;const prog=document.getElementById('programma');dag.programma.forEach(p=>{const li=document.createElement('li');li.innerHTML=`<strong>${p.titel}</strong><br>${p.locatie}<br>📍 ${p.coordinaten.lat}, ${p.coordinaten.lng}`;prog.appendChild(li);});document.getElementById('vorigeDag').href=d>1?`dag.html?dag=${d-1}`:'#';document.getElementById('volgendeDag').href=d<data.length?`dag.html?dag=${d+1}`:'#';const map=L.map('map').setView([dag.programma[0].coordinaten.lat,dag.programma[0].coordinaten.lng],8);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OpenStreetMap'}).addTo(map);dag.programma.forEach(p=>{L.marker([p.coordinaten.lat,p.coordinaten.lng]).addTo(map).bindPopup(`<strong>${p.titel}</strong><br>${p.locatie}`)});});
+async function loadDag() {
+  const params = new URLSearchParams(window.location.search);
+  const dagNummer = parseInt(params.get("dag")) || 1;
+  localStorage.setItem("dag", dagNummer);
+
+  const response = await fetch("routes.json");
+  const dagen = await response.json();
+  const dag = dagen.find(d => d.dag === dagNummer);
+
+  const container = document.getElementById("dag-content");
+  if (!dag) {
+    container.innerHTML = "<h2>Dag niet gevonden.</h2>";
+    return;
+  }
+
+  container.innerHTML = `
+    <h1>Dag ${dag.dag} - ${dag.stad} - ${dag.datum}</h1>
+    <img src="img/${dag.img}" alt="${dag.stad}" style="max-width:100%;" />
+    <section>
+      <h2>Programma</h2>
+      <p>Programma info per dag hier invoegen.</p>
+    </section>
+    <section>
+      <h2>Locaties</h2>
+      <ul>
+        <li>Voorbeeldlocatie 1 (coördinaten)</li>
+        <li>Voorbeeldlocatie 2 (coördinaten)</li>
+      </ul>
+    </section>
+  `;
+}
+
+loadDag();

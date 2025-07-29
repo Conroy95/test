@@ -1,31 +1,27 @@
 <!DOCTYPE html>
-<html lang='nl'>
+<html lang="nl">
 <head>
-	<meta charset='UTF-8'>
-	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-	<link rel='stylesheet' href='style.css'>
-	<title>Dag</title>
-	<script src='dag.js' defer></script>
-	<link rel='stylesheet' href='https://unpkg.com/leaflet/dist/leaflet.css'>
-	<script src='https://unpkg.com/leaflet/dist/leaflet.js'></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="dag.js"></script>
+  <title>Dag</title>
 </head>
-
 <body>
-<nav>
-	<a href='index.html'>Home</a>
-	<a id='vorigeDag'>Vorige</a>
-	<a id='volgendeDag'>Volgende</a>
-</nav>
+  <header>
+    <nav>
+      <button onclick="navigateTo('prev')">Vorige</button>
+      <a href="index.html">Home</a>
+      <button onclick="navigateTo('next')">Volgende</button>
+    </nav>
+  </header>
 
-<main>
-	<h1 id='dagTitel'></h1>
-		<p id='dagDatum'></p>
-		<img id='dagAfbeelding'>
-		<ul id='programma'></ul>
-	<div id='map' style='height:300px;'>
-	</div>
-</main>
+  <main id="dag-content">
+    <h1>Dag info laden...</h1>
+  </main>
 
-<footer>&copy; 2025 Road Trip America</footer>
+  <footer>
+    <p>&copy; 2025 Road Trip America</p>
+  </footer>
 </body>
 </html>

@@ -1,23 +1,31 @@
 <!DOCTYPE html>
-<html lang='nl'>
+<html lang="nl">
 <head>
-	<meta charset='UTF-8'>
-	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-	<link rel='stylesheet' href='style.css'>
-	<link rel='manifest' href='manifest.json'>
-	<title>Home</title>
-	<script src='app.js' defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="fav/favicon-32x32.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="fav/apple-icon-180.png" />
+  <script defer src="app.js"></script>
+  <title>Cowboys & Indians Road Trip</title>
 </head>
 <body>
-<nav>
-	<a href='index.html'>Home</a>
-</nav>
+  <header>
+    <nav>
+      <button onclick="navigateTo('prev')">Vorige</button>
+      <a href="index.html">Home</a>
+      <button onclick="navigateTo('next')">Volgende</button>
+    </nav>
+  </header>
 
-<main>
-	<h1>Road Trip Home</h1>
-	<ul id='dagen'></ul>
-</main>
+  <main>
+    <h1>Welkom bij de Cowboys & Indians Road Trip</h1>
+    <p>Ontdek de route, bekijk dag per dag het programma en geniet van het avontuur!</p>
+  </main>
 
-<footer>&copy; 2025 Road Trip America</footer>
+  <footer>
+    <p>&copy; 2025 Road Trip America</p>
+  </footer>
 </body>
 </html>

@@ -1,1 +1,52 @@
-body{margin:0;font-family:sans-serif;background:white}nav{position:fixed;top:0;width:100%;background:#034a99;color:white;display:flex;justify-content:space-around;padding:1em;z-index:1000}nav a{color:white;text-decoration:none;font-weight:bold}main{padding:80px 20px 80px 20px}footer{position:fixed;bottom:0;width:100%;background:#034a99;color:white;text-align:center;padding:1em}button{background:#21a0f5;color:white;border:none;padding:10px;border-radius:8px}
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: white;
+  color: #000;
+}
+
+header nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #034a99;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  color: white;
+  z-index: 1000;
+}
+
+header nav a,
+header nav button {
+  color: white;
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #034a99;
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+main {
+  padding: 5rem 1rem 3rem;
+}
+
+button {
+  background-color: #21a0f5;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  margin: 0 0.5rem;
+}
