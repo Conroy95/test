@@ -2,30 +2,24 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amerikaanse Roadtrip</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="manifest" href="manifest.json" />
-  <link rel="icon" href="fav/favicon-32x32.png" sizes="32x32" />
-  <link rel="apple-touch-icon" href="fav/apple-icon-180.png" />
-  <script defer src="app.js"></script>
-  <title>Cowboys & Indians Road Trip</title>
+  <link rel="icon" href="favicon.ico" />
 </head>
 <body>
   <header>
-    <nav>
-      <button onclick="navigateTo('prev')">Vorige</button>
-      <a href="index.html">Home</a>
-      <button onclick="navigateTo('next')">Volgende</button>
-    </nav>
+    <h1>Amerikaanse Roadtrip</h1>
   </header>
-
-  <main>
-    <h1>Welkom bij de Cowboys & Indians Road Trip</h1>
-    <p>Ontdek de route, bekijk dag per dag het programma en geniet van het avontuur!</p>
+  <main id="main-content">
+    <div id="locations-list" class="grid"></div>
+    <div id="location-detail" class="hidden"></div>
   </main>
-
   <footer>
-    <p>&copy; 2025 Road Trip America</p>
+    <small>© 2025 Roadtrip App</small>
   </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
