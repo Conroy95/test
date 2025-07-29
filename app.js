@@ -21,16 +21,14 @@ async function fetchLocations() {
 }
 
 function groupLocationsByDay() {
-  // Groepeer locaties per dag
   const grouped = {};
   locationsData.forEach(loc => {
-    const day = loc.Dag || 'Onbekend';
+    const day = loc.Dag;
     if (!grouped[day]) grouped[day] = [];
     grouped[day].push(loc);
   });
-  // Zet om naar array gesorteerd op dag (numeriek)
   groupedByDay = Object.keys(grouped)
-    .sort((a,b) => Number(a) - Number(b))
+    .sort((a, b) => Number(a) - Number(b))
     .map(day => ({ day, locations: grouped[day] }));
 }
 
@@ -40,26 +38,23 @@ function renderLocationsList() {
   currentDayIndex = null;
   updateNavButtons();
 
-  groupedByDay.forEach(dayGroup => {
-    const dayTitle = document.createElement('h2');
-    dayTitle.textContent = `Dag ${dayGroup.day} - ${dayGroup.locations[0].Datum}`;
-    locationsListEl.appendChild(dayTitle);
+  groupedByDay.forEach(group => {
+    const title = document.createElement('h2');
+    title.textContent = `Dag ${group.day} – ${group.locations[0].Datum}`;
+    locationsListEl.appendChild(title);
 
     const grid = document.createElement('div');
     grid.className = 'grid';
 
-    dayGroup.locations.forEach((loc, index) => {
+    group.locations.forEach(loc => {
       const card = document.createElement('div');
       card.className = 'card';
-      card.tabIndex = 0;
       card.innerHTML = `
         <img src="img/${loc.Foto}" alt="${loc.Plaats}" />
         <h3>${loc.Plaats}</h3>
         <p>${loc.Bezienswaardigheid || ''}</p>
       `;
-      card.addEventListener('click', () => showLocationDetail(dayGroup.day));
-      card.addEventListener('keypress', e => { if (e.key === 'Enter') showLocationDetail(dayGroup.day); });
-
+      card.addEventListener('click', () => showLocationDetail(group.day));
       grid.appendChild(card);
     });
 
@@ -70,18 +65,18 @@ function renderLocationsList() {
 function showLocationDetail(day) {
   currentDayIndex = groupedByDay.findIndex(g => g.day === day);
   updateNavButtons();
-  const dayGroup = groupedByDay[currentDayIndex];
 
-  locationsListEl.innerHTML = '';
+  const group = groupedByDay[currentDayIndex];
   locationDetailEl.classList.remove('hidden');
+  locationsListEl.innerHTML = '';
 
   let html = `<button id="back-btn">Terug</button>`;
-  html += `<h2>Dag ${dayGroup.day} - ${dayGroup.locations[0].Datum}</h2>`;
+  html += `<h2>Dag ${group.day} – ${group.locations[0].Datum}</h2>`;
 
-  dayGroup.locations.forEach(loc => {
+  group.locations.forEach(loc => {
     html += `
-      <section style="margin-bottom: 1.5rem;">
-        <img src="img/${loc.Foto}" alt="${loc.Plaats}" style="max-width:100%; border-radius: 8px;" />
+      <section>
+        <img src="img/${loc.Foto}" alt="${loc.Plaats}" />
         <h3>${loc.Plaats}</h3>
         <ul>
           <li><strong>Bezienswaardigheid:</strong> ${loc.Bezienswaardigheid || '-'}</li>
@@ -96,32 +91,17 @@ function showLocationDetail(day) {
   });
 
   locationDetailEl.innerHTML = html;
-
-  document.getElementById('back-btn').addEventListener('click', () => {
-    renderLocationsList();
-  });
+  document.getElementById('back-btn').addEventListener('click', renderLocationsList);
 }
 
 function updateNavButtons() {
   homeBtn.disabled = currentDayIndex === null;
-  prevBtn.disabled = currentDayIndex === null || currentDayIndex <= 0;
-  nextBtn.disabled = currentDayIndex === null || currentDayIndex >= groupedByDay.length -1;
+  prevBtn.disabled = currentDayIndex <= 0;
+  nextBtn.disabled = currentDayIndex === null || currentDayIndex >= groupedByDay.length - 1;
 }
 
-homeBtn.addEventListener('click', () => {
-  renderLocationsList();
-});
-
-prevBtn.addEventListener('click', () => {
-  if (currentDayIndex > 0) {
-    showLocationDetail(groupedByDay[currentDayIndex - 1].day);
-  }
-});
-
-nextBtn.addEventListener('click', () => {
-  if (currentDayIndex < groupedByDay.length -1) {
-    showLocationDetail(groupedByDay[currentDayIndex + 1].day);
-  }
-});
+homeBtn.addEventListener('click', renderLocationsList);
+prevBtn.addEventListener('click', () => showLocationDetail(groupedByDay[currentDayIndex - 1].day));
+nextBtn.addEventListener('click', () => showLocationDetail(groupedByDay[currentDayIndex + 1].day));
 
 fetchLocations();
