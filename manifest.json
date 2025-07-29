@@ -1,0 +1,21 @@
+{
+  "name": "Cowboys & Indians Road Trip",
+  "short_name": "Road Trip",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#034a99",
+  "icons": [
+    {
+      "src": "fav/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "fav/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

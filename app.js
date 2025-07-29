@@ -1,0 +1,1 @@
+fetch('./routes.json').then(r=>r.json()).then(d=>{const l=document.getElementById('dagen');d.forEach(x=>{const i=document.createElement('li');i.innerHTML=`<a href='dag.html?dag=${x.dag}'>Dag ${x.dag} - ${x.locatie} (${x.datum})</a>`;l.appendChild(i);});if('serviceWorker'in navigator){navigator.serviceWorker.register('./sw.js')}});

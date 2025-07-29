@@ -1,0 +1,322 @@
+[
+  {
+    "dag": 1,
+    "locatie": "Denver",
+    "datum": "25 juli",
+    "afbeelding": "denver.png",
+    "programma": [
+      {
+        "titel": "Verkenning van Denver",
+        "locatie": "Denver Centrum",
+        "coordinaten": {
+          "lat": 39.7392,
+          "lng": -104.9903
+        }
+      }
+    ]
+  },
+  {
+    "dag": 2,
+    "locatie": "Cheyenne",
+    "datum": "26 juli",
+    "afbeelding": "cheyenne.png",
+    "programma": [
+      {
+        "titel": "Verkenning van Cheyenne",
+        "locatie": "Cheyenne Centrum",
+        "coordinaten": {
+          "lat": 39.8392,
+          "lng": -104.89030000000001
+        }
+      }
+    ]
+  },
+  {
+    "dag": 3,
+    "locatie": "Cheyenne",
+    "datum": "27 juli",
+    "afbeelding": "cheyenne.png",
+    "programma": [
+      {
+        "titel": "Verkenning van Cheyenne",
+        "locatie": "Cheyenne Centrum",
+        "coordinaten": {
+          "lat": 39.9392,
+          "lng": -104.7903
+        }
+      }
+    ]
+  },
+  {
+    "dag": 4,
+    "locatie": "Hot Springs",
+    "datum": "28 juli",
+    "afbeelding": "hotsprings.png",
+    "programma": [
+      {
+        "titel": "Verkenning van Hot Springs",
+        "locatie": "Hot Springs Centrum",
+        "coordinaten": {
+          "lat": 40.039199999999994,
+          "lng": -104.69030000000001
+        }
+      }
+    ]
+  },
+  {
+    "dag": 5,
+    "locatie": "Rapid City",
+    "datum": "29 juli",
+    "afbeelding": "rapidcity.png",
+    "programma": [
+      {
+        "titel": "Verkenning van Rapid City",
+        "locatie": "Rapid City Centrum",
+        "coordinaten": {
+          "lat": 40.139199999999995,
+          "lng": -104.5903
+        }
+      }
+    ]
+  },
+  {
+    "dag": 6,
+    "locatie": "Badlands National Park",
+    "datum": "30 juli",
+    "afbeelding": "badlands.png",
+    "programma": [
+      {
+        "titel": "Verkenning van Badlands National Park",
+        "locatie": "Badlands National Park Centrum",
+        "coordinaten": {
+          "lat": 40.2392,
+          "lng": -104.4903
+        }
+      }
+    ]
+  },
+  {
+    "dag": 7,
+    "locatie": "Billings",
+    "datum": "31 juli",
+    "afbeelding": "billings.png",
+    "programma": [
+      {
+        "titel": "Verkenning van Billings",
+        "locatie": "Billings Centrum",
+        "coordinaten": {
+          "lat": 40.3392,
+          "lng": -104.39030000000001
+        }
+      }
+    ]
+  },
+  {
+    "dag": 8,
+    "locatie": "Cody",
+    "datum": "1 augustus",
+    "afbeelding": "cody.png",
+    "programma": [
+      {
+        "titel": "Verkenning van Cody",
+        "locatie": "Cody Centrum",
+        "coordinaten": {
+          "lat": 40.4392,
+          "lng": -104.2903
+        }
+      }
+    ]
+  },
+  {
+    "dag": 9,
+    "locatie": "Yellowstone National Park",
+    "datum": "2 augustus",
+    "afbeelding": "yellowstone.png",
+    "programma": [
+      {
+        "titel": "Verkenning van Yellowstone National Park",
+        "locatie": "Yellowstone National Park Centrum",
+        "coordinaten": {
+          "lat": 40.539199999999994,
+          "lng": -104.19030000000001
+        }
+      }
+    ]
+  },
+  {
+    "dag": 10,
+    "locatie": "Yellowstone National Park",
+    "datum": "3 augustus",
+    "afbeelding": "yellowstone.png",
+    "programma": [
+      {
+        "titel": "Verkenning van Yellowstone National Park",
+        "locatie": "Yellowstone National Park Centrum",
+        "coordinaten": {
+          "lat": 40.639199999999995,
+          "lng": -104.0903
+        }
+      }
+    ]
+  },
+  {
+    "dag": 11,
+    "locatie": "Yellowstone National Park",
+    "datum": "4 augustus",
+    "afbeelding": "yellowstone.png",
+    "programma": [
+      {
+        "titel": "Verkenning van Yellowstone National Park",
+        "locatie": "Yellowstone National Park Centrum",
+        "coordinaten": {
+          "lat": 40.7392,
+          "lng": -103.9903
+        }
+      }
+    ]
+  },
+  {
+    "dag": 12,
+    "locatie": "Jackson Hole",
+    "datum": "5 augustus",
+    "afbeelding": "jacksonhole.png",
+    "programma": [
+      {
+        "titel": "Verkenning van Jackson Hole",
+        "locatie": "Jackson Hole Centrum",
+        "coordinaten": {
+          "lat": 40.8392,
+          "lng": -103.89030000000001
+        }
+      }
+    ]
+  },
+  {
+    "dag": 13,
+    "locatie": "Jackson Hole",
+    "datum": "6 augustus",
+    "afbeelding": "jacksonhole.png",
+    "programma": [
+      {
+        "titel": "Verkenning van Jackson Hole",
+        "locatie": "Jackson Hole Centrum",
+        "coordinaten": {
+          "lat": 40.9392,
+          "lng": -103.7903
+        }
+      }
+    ]
+  },
+  {
+    "dag": 14,
+    "locatie": "Salt Lake City",
+    "datum": "7 augustus",
+    "afbeelding": "saltlakecity.png",
+    "programma": [
+      {
+        "titel": "Verkenning van Salt Lake City",
+        "locatie": "Salt Lake City Centrum",
+        "coordinaten": {
+          "lat": 41.039199999999994,
+          "lng": -103.69030000000001
+        }
+      }
+    ]
+  },
+  {
+    "dag": 15,
+    "locatie": "Salt Lake City",
+    "datum": "8 augustus",
+    "afbeelding": "saltlakecity.png",
+    "programma": [
+      {
+        "titel": "Verkenning van Salt Lake City",
+        "locatie": "Salt Lake City Centrum",
+        "coordinaten": {
+          "lat": 41.139199999999995,
+          "lng": -103.5903
+        }
+      }
+    ]
+  },
+  {
+    "dag": 16,
+    "locatie": "Moab",
+    "datum": "9 augustus",
+    "afbeelding": "moab.png",
+    "programma": [
+      {
+        "titel": "Verkenning van Moab",
+        "locatie": "Moab Centrum",
+        "coordinaten": {
+          "lat": 41.2392,
+          "lng": -103.4903
+        }
+      }
+    ]
+  },
+  {
+    "dag": 17,
+    "locatie": "Moab",
+    "datum": "10 augustus",
+    "afbeelding": "moab.png",
+    "programma": [
+      {
+        "titel": "Verkenning van Moab",
+        "locatie": "Moab Centrum",
+        "coordinaten": {
+          "lat": 41.3392,
+          "lng": -103.39030000000001
+        }
+      }
+    ]
+  },
+  {
+    "dag": 18,
+    "locatie": "Denver",
+    "datum": "11 augustus",
+    "afbeelding": "denver.png",
+    "programma": [
+      {
+        "titel": "Verkenning van Denver",
+        "locatie": "Denver Centrum",
+        "coordinaten": {
+          "lat": 41.4392,
+          "lng": -103.2903
+        }
+      }
+    ]
+  },
+  {
+    "dag": 19,
+    "locatie": "Denver",
+    "datum": "12 augustus",
+    "afbeelding": "denver.png",
+    "programma": [
+      {
+        "titel": "Verkenning van Denver",
+        "locatie": "Denver Centrum",
+        "coordinaten": {
+          "lat": 41.539199999999994,
+          "lng": -103.19030000000001
+        }
+      }
+    ]
+  },
+  {
+    "dag": 20,
+    "locatie": "Amsterdam",
+    "datum": "13 augustus",
+    "afbeelding": "amsterdam.png",
+    "programma": [
+      {
+        "titel": "Verkenning van Amsterdam",
+        "locatie": "Amsterdam Centrum",
+        "coordinaten": {
+          "lat": 41.639199999999995,
+          "lng": -103.0903
+        }
+      }
+    ]
+  }
+]
