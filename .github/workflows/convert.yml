@@ -1,17 +1,16 @@
-name: Excel naar JSON converter
+name: Convert Excel to JSON
 
 on:
   push:
     paths:
-      - 'data/*.xlsx'
+      - 'data/locations.xlsx'
 
 jobs:
   convert:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v3
 
     - name: Setup Python
       uses: actions/setup-python@v4
@@ -19,21 +18,17 @@ jobs:
         python-version: '3.x'
 
     - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install pandas openpyxl
+      run: pip install pandas openpyxl
 
-    - name: Converteer Excel naar JSON
-      run: |
-        python scripts/convert_excel_to_json.py
+    - name: Run converter script
+      run: python scripts/convert_excel_to_json.py
 
-    - name: Commit en push JSON
+    - name: Commit JSON
       run: |
         git config --local user.name "github-actions"
         git config --local user.email "github-actions@github.com"
         git add data/locations.json
-        git commit -m "Update JSON data vanuit Excel"
+        git commit -m "Update JSON data vanuit Excel" || echo "No changes to commit"
         git push
       env:
-        # Gebruik een token met push rechten als dat nodig is
-        # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
