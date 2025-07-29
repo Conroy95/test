@@ -1,20 +1,60 @@
-/* Navbar styling */
-#navbar {
+/* Algemeen reset en lettertype */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f9fc;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* NAVBAR */
+header {
   background-color: #004a99;
-  padding: 0.5rem;
+  color: white;
+  padding: 0.5rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  flex-grow: 1;
+  text-align: center;
+}
+
+#navbar {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: nowrap;
   justify-content: center;
+  flex-grow: 1;
 }
 
 #navbar button {
   background-color: #0066cc;
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.1rem;
   color: white;
-  font-weight: bold;
-  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#navbar button:hover:not(:disabled) {
+  background-color: #004a99;
 }
 
 #navbar button:disabled {
@@ -22,19 +62,140 @@
   cursor: not-allowed;
 }
 
-/* Footer fixed onderaan */
+/* MAIN CONTENT */
+main {
+  padding: 1rem 1.5rem 4rem; /* ruimte onderin voor footer */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Grid voor locaties overzicht */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Kaarten voor locaties */
+.card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+
+.card:hover,
+.card:focus {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  outline: none;
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.card h3 {
+  margin: 0.75rem 1rem 0 1rem;
+  font-size: 1.2rem;
+  color: #004a99;
+}
+
+.card p {
+  margin: 0.25rem 1rem 1rem 1rem;
+  font-size: 0.9rem;
+  color: #666;
+  flex-grow: 1;
+}
+
+/* DETAIL PAGINA */
+#location-detail {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+#location-detail section {
+  margin-bottom: 2rem;
+}
+
+#location-detail img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.75rem;
+}
+
+#location-detail h2,
+#location-detail h3 {
+  color: #004a99;
+  margin-top: 0;
+}
+
+#location-detail ul {
+  list-style-type: none;
+  padding-left: 0;
+  color: #444;
+}
+
+#location-detail ul li {
+  margin-bottom: 0.3rem;
+}
+
+/* Terug knop in detail */
+#back-btn {
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+#back-btn:hover {
+  background-color: #004a99;
+}
+
+/* FOOTER fixed onderaan */
 footer {
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
-  background: #0066cc;
+  background-color: #004a99;
   color: white;
   text-align: center;
-  padding: 0.75rem 0;
+  padding: 0.8rem 0;
   font-size: 0.9rem;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.15);
+  z-index: 999;
 }
 
-/* Main content moet rekening houden met footer */
-main {
-  padding-bottom: 3rem; /* zodat content niet achter footer valt */
+/* Responsive tekstgrootte */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.25rem;
+  }
+
+  #navbar button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .card img {
+    height: 140px;
+  }
 }
